@@ -161,10 +161,11 @@ func main() {
 	     // looping into maps 
 
 		 for k, v := range menu {
-			fmt.Printf("The price of %v is %v", k, v)
+			fmt.Printf("The price of %v is %v \n", k, v)
 		 }
 
-
+    // Import from the greeting
+	sayHello("Ishema")
 }
 
 
