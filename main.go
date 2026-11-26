@@ -143,8 +143,8 @@ func main() {
 	sum := add(10, 75)
 	fmt.Println("The sum is", sum)
 
-	fn1, sn1 := getInitials("Mario Luigi")
-    fmt.Println(fn1, sn1)
+	fn1, sn1, tn1 := getInitials("Mario Luigi")
+    fmt.Println(fn1, sn1, tn1)
 
 	// Maps
 
@@ -166,27 +166,36 @@ func main() {
 
     // Import from the greeting
 	sayHello("Ishema")
+
+
+
+	// Pass By Values 
+
+    
+
 }
 
 
-func getInitials(name string) (string, string) {
+func getInitials(name string) (string, string, string) {
      strings.ToUpper(name)
-	 names := strings.Split(name, " ")
+	 names := strings.Split(name, "")
+	 fmt.Println(names)
 	 
 	 var initials []string
 
-	 for _,v := range names {
+	 for _, v := range names {
 		initials = append(initials, v[:1])
 	 }
 
 	 if len(initials) > 1 {
-		return initials[0], initials[1]
+		fmt.Println(initials)
+		return initials[0], initials[1], initials[2]
 	 }
 
-	 return initials[0], "_"
+	 return initials[0], "_", "_"
 }
 
-
+ 
 
 
 
