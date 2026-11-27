@@ -192,6 +192,27 @@ func main() {
      fmt.Println(name)
 
 
+
+	 // Structs and Custom Types
+
+	 type Student struct {
+		name string       
+		age uint32
+		email string 
+		grade string  
+	 }
+
+	 var student1 Student = Student{
+		name: "Ishema",
+		age: 20,
+		email: "ishema@gmail.com",
+		grade: "Grade 12",
+	 }
+
+     fmt.Println(student1)
+
+
+	 // Receiver Functions
 }
 
 
