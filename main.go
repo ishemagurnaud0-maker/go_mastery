@@ -1,9 +1,11 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
+	"strconv"
 	"strings"
-	"sort"
 )
 
 
@@ -20,210 +22,217 @@ type Student struct {
 }
 
 func main() {
-	fmt.Println("Hello, World")
+	// fmt.Println("Hello, World")
 
-	//strings
+	// //strings
 
-	var nameOne string = "Ishema"
-	var nameTwo = "Gigi"
-	nameThree := "Nigga"
+	// var nameOne string = "Ishema"
+	// var nameTwo = "Gigi"
+	// nameThree := "Nigga"
 
-	fmt.Println(nameOne, nameThree, nameTwo)
-
-
-	//integers
-
-	var number1 int = 234
-	var number2 = 4444
-	number3 := 333
-
-	fmt.Println(number1, number2, number3)
+	// fmt.Println(nameOne, nameThree, nameTwo)
 
 
-	//floats  we must declare explicitly the number of bits to use either `float32 or `float64`
+	// //integers
 
-     var score1 float32 = 25.98
-	 var score2 float64 = 6782.578
+	// var number1 int = 234
+	// var number2 = 4444
+	// number3 := 333
 
-     fmt.Println(score1, score2)
+	// fmt.Println(number1, number2, number3)
 
 
-	 // How fmt works and the resulting methods
+	// //floats  we must declare explicitly the number of bits to use either `float32 or `float64`
 
-     // Print()
-	 fmt.Print("Hello, ")
-	 fmt.Print("World")
+    //  var score1 float32 = 25.98
+	//  var score2 float64 = 6782.578
 
-	 //Println
-	 fmt.Println("Hello ninjas")
-	 fmt.Println("My score in math is", score1 , "out of 30")
+    //  fmt.Println(score1, score2)
+
+
+	//  // How fmt works and the resulting methods
+
+    //  // Print()
+	//  fmt.Print("Hello, ")
+	//  fmt.Print("World")
+
+	//  //Println
+	//  fmt.Println("Hello ninjas")
+	//  fmt.Println("My score in math is", score1 , "out of 30")
     
-	 //Printf(formatted Strings)
-	 fmt.Printf("My name is %v", nameOne)  // %v format specifier for variables
-     // %T gives the data type of the passed variable
-	 // %f used for floats
-	 // %q used for strings
+	//  //Printf(formatted Strings)
+	//  fmt.Printf("My name is %v", nameOne)  // %v format specifier for variables
+    //  // %T gives the data type of the passed variable
+	//  // %f used for floats
+	//  // %q used for strings
 
 
-	 //Sprintf(Saving formatted strings)
+	//  //Sprintf(Saving formatted strings)
 
-	 number := fmt.Sprintf("My Home town is %v km away", score2)
-	 fmt.Println(number)
-
-
-
-	 // Arrays
-
-	var ages = [3]int{20, 29, 24}
-	 age := [4]float64{40.0, 30.89, 49.333}
+	//  number := fmt.Sprintf("My Home town is %v km away", score2)
+	//  fmt.Println(number)
 
 
-	 fmt.Println(ages[2])
-	 fmt.Println(age)
+
+	//  // Arrays
+
+	// var ages = [3]int{20, 29, 24}
+	//  age := [4]float64{40.0, 30.89, 49.333}
 
 
-	 // Slices
+	//  fmt.Println(ages[2])
+	//  fmt.Println(age)
 
-	 var scores = []int{39, 47, 56, 78}
-	 scores = append(scores, 34)
+
+	//  // Slices
+
+	//  var scores = []int{39, 47, 56, 78}
+	//  scores = append(scores, 34)
 
 	 
-    // Slice Ranges 
+    // // Slice Ranges 
 	
-	var rangeOne = scores[1:2]
-	var rangeTwo = scores[2:]
-	var rangeThree = scores[:3]
-	fmt.Println(rangeOne, rangeTwo, rangeThree)
+	// var rangeOne = scores[1:2]
+	// var rangeTwo = scores[2:]
+	// var rangeThree = scores[:3]
+	// fmt.Println(rangeOne, rangeTwo, rangeThree)
 
-	// The STD package
+	// // The STD package
 
-     //Strings
+    //  //Strings
 
-	 greeting := "Holla wassup everyone"
+	//  greeting := "Holla wassup everyone"
 
-	 fmt.Println(strings.ReplaceAll(greeting, "Holla", "Hi"))
-	 fmt.Println(strings.ToUpper(greeting))
-	 fmt.Println(strings.ToLower(greeting))
+	//  fmt.Println(strings.ReplaceAll(greeting, "Holla", "Hi"))
+	//  fmt.Println(strings.ToUpper(greeting))
+	//  fmt.Println(strings.ToLower(greeting))
     
 
-	 // Sorting 
+	//  // Sorting 
 
-	 newAges := []int{34, 5, 54, 54, 35, 33, 53, 56}
-	 sort.Ints(newAges)
-	 fmt.Println(newAges)
+	//  newAges := []int{34, 5, 54, 54, 35, 33, 53, 56}
+	//  sort.Ints(newAges)
+	//  fmt.Println(newAges)
 
-	 fmt.Println(sort.SearchInts(newAges, 44))
-	  fmt.Println(sort.SearchInts(newAges, 54))
+	//  fmt.Println(sort.SearchInts(newAges, 44))
+	//   fmt.Println(sort.SearchInts(newAges, 54))
     
 
-	// Loops 
+	// // Loops 
 
-	x := 0
+	// x := 0
 
-	for x < 5 {
-		fmt.Println(x)
-		x++
-	}
+	// for x < 5 {
+	// 	fmt.Println(x)
+	// 	x++
+	// }
 
-	for i:= 0; i < len(newAges); i++ {
-		fmt.Println("Todays age is:", newAges[i])
-	}
+	// for i:= 0; i < len(newAges); i++ {
+	// 	fmt.Println("Todays age is:", newAges[i])
+	// }
 
 
 
 
 	
-	// conditionals
+	// // conditionals
 
-	cd := 45 
+	// cd := 45 
 
-	if cd <= 50 {
-		fmt.Println("You have normal cd")
-	} else if cd > 50 {
-        fmt.Println("You have a lot of cd.") 
-	}
-
-
-
-	// functions
-
-	sum := add(10, 75)
-	fmt.Println("The sum is", sum)
-
-	fn1, sn1 := getInitials("Mario Luigi")
-    fmt.Println(fn1, sn1)
-
-	// Maps
-
-	  menu := map[string] float64 {
-		 "soup" : 3.54,
-		 "pie" : 5.78,
-		 "rice" : 6.79,
-		 "ice cream" : 3.35,
-	  }
-
-	  fmt.Println(menu["pie"])
-
-
-	     // looping into maps 
-
-		 for k, v := range menu {
-			fmt.Printf("The price of %v is %v \n", k, v)
-		 }
-
-    // Import from the greeting
-	sayHello("Ishema")
+	// if cd <= 50 {
+	// 	fmt.Println("You have normal cd")
+	// } else if cd > 50 {
+    //     fmt.Println("You have a lot of cd.") 
+	// }
 
 
 
-	// Pass By Values 
+	// // functions
 
-    /**
-	  In GO the are two types of variable types the pointer wrapper variables(functions, slices, arrays, maps) and 
-	  the non-pointer variables (all data types and structs)
+	// sum := add(10, 75)
+	// fmt.Println("The sum is", sum)
 
-	  For non-pointer variables when used passed to a function it can not alter or change the original values of the variable it instead uses a copy of that variable 
-	  while the pointer wrapper copies the pointer to the original underlying data        
-	*/
+	// fn1, sn1 := getInitials("Mario Luigi")
+    // fmt.Println(fn1, sn1)
 
+	// // Maps
 
-	//Pointers  
+	//   menu := map[string] float64 {
+	// 	 "soup" : 3.54,
+	// 	 "pie" : 5.78,
+	// 	 "rice" : 6.79,
+	// 	 "ice cream" : 3.35,
+	//   }
 
-	 name := "James"
-     testVarCopying(name)
-	 fmt.Println(name)
-
-
-	 name_ptr := &name
-	 usePointers(name_ptr)
-     fmt.Println(name)
+	//   fmt.Println(menu["pie"])
 
 
+	//      // looping into maps 
 
-	 // Structs and Custom Types
+	// 	 for k, v := range menu {
+	// 		fmt.Printf("The price of %v is %v \n", k, v)
+	// 	 }
 
-	 var student1 Student = Student{
-		name: "Ishema",
-		age: 20,
-		email: "ishema@gmail.com",
-		grade: "Grade 12",
-	 }
+    // // Import from the greeting
+	// sayHello("Ishema")
+
+
+
+	// // Pass By Values 
+
+    // /**
+	//   In GO the are two types of variable types the pointer wrapper variables(functions, slices, arrays, maps) and 
+	//   the non-pointer variables (all data types and structs)
+
+	//   For non-pointer variables when used passed to a function it can not alter or change the original values of the variable it instead uses a copy of that variable 
+	//   while the pointer wrapper copies the pointer to the original underlying data        
+	// */
+
+
+	// //Pointers  
+
+	//  name := "James"
+    //  testVarCopying(name)
+	//  fmt.Println(name)
+
+
+	//  name_ptr := &name
+	//  usePointers(name_ptr)
+    //  fmt.Println(name)
+
+
+
+	//  // Structs and Custom Types
+
+	//  var student1 Student = Student{
+	// 	name: "Ishema",
+	// 	age: 20,
+	// 	email: "ishema@gmail.com",
+	// 	grade: "Grade 12",
+	//  }
     
-     fmt.Println(student1)
-	 var na uint32 = 21
-	 newAge := student1.updateAge(na)
-	 fmt.Println(newAge)
+    //  fmt.Println(student1)
+	//  var na uint32 = 21
+	//  newAge := student1.updateAge(na)
+	//  fmt.Println(newAge)
 
-	 student1.display()
-     grade := "Grade 13"
-	 newGrade := student1.updateGrade(grade)
-	 fmt.Println(newGrade)
+	//  student1.display()
+    //  grade := "Grade 13"
+	//  newGrade := student1.updateGrade(grade)
+	//  fmt.Println(newGrade)
 
-	 student1.display()
+	//  student1.display()
+
+
+	newStudent := createStudent()
+	fmt.Println(newStudent)
+
 
 }
 
 // Receiver functions associated with the Student structure.
+
+
 func (s Student) display() {
 	fmt.Println(s)
 }
@@ -236,6 +245,58 @@ func (s *Student) updateAge(age uint32) uint32 {
 func (s *Student) updateGrade(grade string) string {
 	s.grade = grade
 	return s.grade
+}
+
+func createStudent() Student {
+
+   name, age, email, grade,_  := collectStudentRecords()
+
+   newStudent := Student{
+	name,
+	age,
+	email,
+	grade,
+   }
+
+   return newStudent
+}
+
+func collectStudentRecords() (string, uint32, string, string, error) {
+	reader := bufio.NewReader(os.Stdin)
+
+	ask := func(label string) (string, error) {
+		fmt.Print(label)
+		line, err := reader.ReadString('\n')
+
+		return strings.TrimSpace(line), err
+	}
+
+	name, err := ask("What is your name: ")
+	if err != nil {
+		return "", 0, "", "", err
+	}
+
+	ageStr, err := ask("How old are you: ")
+	if err != nil {
+		return "", 0, "", "", err
+	}
+
+	age64, err := strconv.ParseUint(ageStr, 10, 32)
+	if err != nil {
+		return "", 0, "", "", fmt.Errorf("Invalid age: %q: %w", ageStr, err)
+	}
+
+	email, err := ask("What is your email: ")
+	if err != nil {
+		return "", 0, "", "", err
+	}
+
+	grade, err := ask("In which grade are you: ")
+	if err != nil {
+		return "", 0, "", "", err
+	}
+
+   return name, uint32(age64), email, grade, nil
 }
 
 
@@ -266,6 +327,10 @@ func testVarCopying(n string) {
 func usePointers(n *string) {
 	*n ="Bron"
 }
+
+
+
+
 
  
 
