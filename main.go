@@ -12,6 +12,13 @@ func add(i uint32, j uint32) uint32 {
 	return i + j
 } 
 
+type Student struct {
+	name  string
+	age   uint32
+	email string
+	grade string
+}
+
 func main() {
 	fmt.Println("Hello, World")
 
@@ -195,24 +202,40 @@ func main() {
 
 	 // Structs and Custom Types
 
-	 type Student struct {
-		name string       
-		age uint32
-		email string 
-		grade string  
-	 }
-
 	 var student1 Student = Student{
 		name: "Ishema",
 		age: 20,
 		email: "ishema@gmail.com",
 		grade: "Grade 12",
 	 }
-
+    
      fmt.Println(student1)
+	 var na uint32 = 21
+	 newAge := student1.updateAge(na)
+	 fmt.Println(newAge)
 
+	 student1.display()
+     grade := "Grade 13"
+	 newGrade := student1.updateGrade(grade)
+	 fmt.Println(newGrade)
 
-	 // Receiver Functions
+	 student1.display()
+
+}
+
+// Receiver functions associated with the Student structure.
+func (s Student) display() {
+	fmt.Println(s)
+}
+
+func (s *Student) updateAge(age uint32) uint32 {
+	s.age = age
+	return s.age
+}
+
+func (s *Student) updateGrade(grade string) string {
+	s.grade = grade
+	return s.grade
 }
 
 
