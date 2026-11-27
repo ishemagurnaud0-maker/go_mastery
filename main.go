@@ -143,8 +143,8 @@ func main() {
 	sum := add(10, 75)
 	fmt.Println("The sum is", sum)
 
-	fn1, sn1, tn1 := getInitials("Mario Luigi")
-    fmt.Println(fn1, sn1, tn1)
+	fn1, sn1 := getInitials("Mario Luigi")
+    fmt.Println(fn1, sn1)
 
 	// Maps
 
@@ -171,12 +171,31 @@ func main() {
 
 	// Pass By Values 
 
-    
+    /**
+	  In GO the are two types of variable types the pointer wrapper variables(functions, slices, arrays, maps) and 
+	  the non-pointer variables (all data types and structs)
+
+	  For non-pointer variables when used passed to a function it can not alter or change the original values of the variable it instead uses a copy of that variable 
+	  while the pointer wrapper copies the pointer to the original underlying data        
+	*/
+
+
+	//Pointers  
+
+	 name := "James"
+     testVarCopying(name)
+	 fmt.Println(name)
+
+
+	 name_ptr := &name
+	 usePointers(name_ptr)
+     fmt.Println(name)
+
 
 }
 
 
-func getInitials(name string) (string, string, string) {
+func getInitials(name string) (string, string) {
      strings.ToUpper(name)
 	 names := strings.Split(name, "")
 	 fmt.Println(names)
@@ -189,10 +208,19 @@ func getInitials(name string) (string, string, string) {
 
 	 if len(initials) > 1 {
 		fmt.Println(initials)
-		return initials[0], initials[1], initials[2]
+		return initials[0], initials[1]
 	 }
 
-	 return initials[0], "_", "_"
+	 return initials[0], "_"
+}
+
+func testVarCopying(n string) {
+	n = "Bron"
+}
+
+
+func usePointers(n *string) {
+	*n ="Bron"
 }
 
  

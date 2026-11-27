@@ -6,6 +6,6 @@ import (
 
 
 func sayHello(name string) {
-	fmt.Printf("Hello, %v", name)
+	fmt.Printf("Hello, %v \n", name)
 }
 
